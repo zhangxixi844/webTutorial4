@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookCatalogue>
+    <book id="1">
+        <title>XML Developer's Guide</title>
+        <author>Gambardella</author>
+        <price>10.95</price>
+    </book>
+    <book id="2">
+        <title>Midnight Rain</title>
+        <author>Ralls</author>
+        <price>5.95</price>
+    </book>
+    <book id="3">
+        <title>Paiper</title>
+        <author>Doe</author>
+        <price>24.95</price>
+    </book>
+    <book id="4">
+        <title>The Sundered Grail</title>
+        <author>Evans</author>
+        <price>14.95</price>
+    </book>
+</bookCatalogue>

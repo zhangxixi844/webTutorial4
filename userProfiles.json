@@ -1,0 +1,58 @@
+{
+    "userProfiles":[
+        {
+            "firstName":"John",
+            "lastName":"Doe",
+            "email":"john.doe@example.com",
+            "dateOfBirth":"1990-01-01",
+            "preferences":{
+                "theme":"dark",
+                "language":"en",
+                "notifications":true,
+                "subscription":true
+            },
+            "address":{
+                "street":"123 Main St",
+                "city":"Springfiled",
+                "state":"IL",
+                "zipCode":"62701"
+            }
+        },
+        {
+            "firstName":"Yunsheng",
+            "lastName":"Jiang",
+            "email":"ys.j@example.com",
+            "dateOfBirth":"1996-06-01",
+            "preferences":{
+                "theme":"dark",
+                "language":"chinese",
+                "notifications":true,
+                "subscription":true
+            },
+            "address":{
+                "street":"182 Main St",
+                "city":"Springfiled",
+                "state":"CA",
+                "zipCode":"10001"
+            }
+        },
+        {
+            "firstName":"Alice",
+            "lastName":"Smith",
+            "email":"alice.smith@example.com",
+            "dateOfBirth":"1995-03-03",
+            "preferences":{
+                "theme":"light",
+                "language":"fr",
+                "notifications":true,
+                "subscription":false
+            },
+            "address":{
+                "street":"789 Pine St",
+                "city":"Summerfiled",
+                "state":"GH",
+                "zipCode":"95123"
+            }
+        }
+    ]
+}

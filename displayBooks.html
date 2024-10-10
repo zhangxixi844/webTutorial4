@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Book Catalogue</title>
+        <style>
+            body{
+                font-family: Arial,sans-serif;
+            }
+            table{
+                width:100%;
+                border-collapse: collapse;
+            }
+            table,th,td{
+                border: 1px soild black;
+            }
+            th,td{
+                padding:8px;
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Book Catalogue</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody id="bookTableBody">
+                <!--Data will be inserted here by JavaScript -->
+            </tbody>
+        </table>
+
+        <script>
+            fetch('book.xml')
+                .then(response=>response.text())
+                .then(data=>{
+                    const parser=new DOMParser();
+                    const xmlDoc=parser.parseFromString(data,"text/xml");
+                    const books=xmlDoc.getElementsByTagName("book");
+                    const tableBody=document.getElementById('bookTableBody');
+                    for(let i=0;i<books.length;i++){
+                        const book=books[i];
+                        const title=book.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+                        const author=book.getElementsByTagName("author")[0].childNodes[0].nodeValue;
+                        const price=book.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+                        const row=tableBody.insertRow();
+                        const cellTitle=row.insertCell(0);
+                        const cellAuthor=row.insertCell(1);
+                        const cellPrice=row.insertCell(2);
+                        cellTitle.appendChild(document.createTextNode(title));
+                        cellAuthor.appendChild(document.createTextNode(author));
+                        cellPrice.appendChild(document.createTextNode(price));
+                    }
+                })
+                .catch(error=>console.log('Error fetching or parsing XML:',error));
+        </script>
+    </body>
+</html>
